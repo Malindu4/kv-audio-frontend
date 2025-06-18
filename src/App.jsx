@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ProductCard from './components/ProductCard'
-
+import Adminpage from './components/adminpage'
 
 function App() {
  
@@ -13,7 +13,7 @@ function App() {
    
   <Routes path="/" >
   
-    <Route path="/admin" element={<Adminpage />}  />
+    <Route path="/admin" element={<Adminpage/>}  />
     <Route path="/" element={<h1>Home</h1>}  /> 
   </Routes>
    
