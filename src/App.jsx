@@ -15,6 +15,7 @@ function App() {
   
     <Route path="/admin" element={<Adminpage/>}  />
     <Route path="/" element={<h1>Home</h1>}  /> 
+    <Route path="/*"element={<h1>Not Found  </h1>}/>
   </Routes>
    
    </BrowserRouter>
