@@ -2,7 +2,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ProductCard from './components/ProductCard'
-import Adminpage from './components/adminpage'
+import AdminPage from './pages/admin/adminpage'
+import Homepage from './pages/homepage'
+
 
 function App() {
  
@@ -13,8 +15,8 @@ function App() {
    
   <Routes path="/" >
   
-    <Route path="/admin" element={<Adminpage/>}  />
-    <Route path="/" element={<h1>Home</h1>}  /> 
+    <Route path="/admin/*" element={<AdminPage/>}  />
+    <Route path="/" element={<Homepage/>}  /> 
     <Route path="/*"element={<h1>Not Found  </h1>}/>
   </Routes>
    
