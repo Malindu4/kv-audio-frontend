@@ -11,17 +11,18 @@ export  default function Header(){
         
         
         <Link to="/" className="text-[20px] font-bold m-1">
-            Home
+           Home
         </Link>
         <Link to="/contact" className="text-[20px] font-bold m-1">
-            Contact
+           Contact
         </Link>
           {/*gallery*/}
           <Link to="/gallery" className="text-[20px] font-bold m-1">
            Gallery
         </Link>
         {/*items*/}
-        <Link to="/items" className="text-[20px] font-bold m-1 ">
+        <Link to="/items"
+         className="text-[20px] font-bold m-1 ">
            Items
         </Link>
         

@@ -1,11 +1,38 @@
-import Header from "../components/header";
+import {  Route, Routes } from "react-router-dom"
+import Header from "../../components/header"
+
+import Gallery from "./gellero"
+import Contact from "./contact"
+import Home from "./home"
+import Items from "./items"
+import ErrorNotFound from "./error"
+
 
 export default function Homepage(){
     return(
-        <div className="w-full  h-screen flex justify-center ">
+        <>
+        <Header/>
+      
+        <div className=" h-calc(100vh-100px) w-full">
+ 
+     <Routes path="/*" >
      
- <Header/>
+     
+     
+     
+     <Route path="/items" element={<Items/>}/>
+     <Route path="/*" element={<ErrorNotFound/>}/>
+     <Route path="/" element={<Home/>}/>
+     <Route path="/contact" element={<Contact/>}/>
+     <Route path="/gallery" element={<Gallery/>}/>
+     
+     </Routes>
+     
+      
      
         </div>
+        
+        </>
+        
     )
 }

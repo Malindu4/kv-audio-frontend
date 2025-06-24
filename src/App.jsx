@@ -1,9 +1,9 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import ProductCard from './components/ProductCard'
+
 import AdminPage from './pages/admin/adminpage'
-import Homepage from './pages/homepage'
+import Homepage from './pages/home/homepage'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   <Routes path="/" >
   
     <Route path="/admin/*" element={<AdminPage/>}  />
-    <Route path="/" element={<Homepage/>}  /> 
+    <Route path="/*" element={<Homepage/>}  /> 
     <Route path="/*"element={<h1>Not Found  </h1>}/>
   </Routes>
    
