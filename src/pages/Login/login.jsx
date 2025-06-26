@@ -1,14 +1,32 @@
+import axios from "axios";
 import"./loain.css"
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default   function Loginpage() {
    const[email, setEmail] = useState("");
    const[password, setPassword] = useState("");
-   function handleOnSubmit(
+   function handleOnSubmit(e
+    ){
+    e.preventDefault();//website එක  සකස්වීම  පෙන්නන එක නතර වෙනවා
+
+    console.log(email, password)
+   
+    axios.post("http://localhost:3000/api/users/login", 
+        {email : email,
+        password : password
+      }
+      ).then((res) => {
+        console.log(res);
+
+    toast.success("Login Success")
+
+      }).catch((err) => {
+        console.log(err.response.data.error);
+      });
+     
+}
        
-    ) {
-       console.log("submitter");
-    }
    
    
     return (
