@@ -5,6 +5,7 @@ import './App.css'
 import AdminPage from './pages/admin/adminpage'
 import Homepage from './pages/home/homepage'
 import Testing from './components/testing'
+import Loginpage from './pages/Login/login'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <Route path="/*" element={<Homepage/>}  /> 
     <Route path="/*"element={<h1>Not Found  </h1>}/>
     <Route path="/testing" element={<Testing/>}  />
+    <Route path="/login" element={<Loginpage/>}  />
   </Routes>
    
    </BrowserRouter>
