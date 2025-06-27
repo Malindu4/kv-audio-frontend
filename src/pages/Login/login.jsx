@@ -26,6 +26,7 @@ export default   function Loginpage() {
     toast.success("Login Success")
 
     const user= res.data.user;
+    localStorage.setItem("token", res.data.token);  // data token karmu  s
     if(user.role === "admin"){
       navigate("/admin");
     }else{
