@@ -6,16 +6,16 @@ import AdminPage from './pages/admin/adminpage'
 import Homepage from './pages/home/homepage'
 import Testing from './components/testing'
 import Loginpage from './pages/Login/login'
-import { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 function App() {
- 
+ const notify = () => toast("Wow so easy!");
 
   return (
     <BrowserRouter>
    <Toaster position="top-right"/>
-   
+  
   <Routes path="/" >
   
     <Route path="/admin/*" element={<AdminPage/>}  />

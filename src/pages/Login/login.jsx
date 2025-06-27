@@ -1,11 +1,15 @@
 import axios from "axios";
 import"./loain.css"
-import { useState } from "react";
+import { use, useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export default   function Loginpage() {
    const[email, setEmail] = useState("");
    const[password, setPassword] = useState("");
+
+      const  navigate= useNavigate();//website එක  සකස්වීම  පෙන්නන එක නතර වෙනවා
+
    function handleOnSubmit(e
     ){
     e.preventDefault();//website එක  සකස්වීම  පෙන්නන එක නතර වෙනවා
@@ -20,6 +24,13 @@ export default   function Loginpage() {
         console.log(res);
 
     toast.success("Login Success")
+
+    const user= res.data.user;
+    if(user.role === "admin"){
+      navigate("/admin");
+    }else{
+      navigate("/");
+    }
 
       }).catch((err) => {
         console.log(err.response.data.error);
@@ -40,10 +51,15 @@ export default   function Loginpage() {
                  
                 <input type="email" placeholder="Email" className="w-[300px] h-[50px] rounded-lg border-b-2w-[300px]  m-2 p-2 bg-black text-white font-bold" 
                  value={email}
+                 
                  onChange={(e) => setEmail(e.target.value)} />
+                 
+                 
                  <input type="password" placeholder="Password" className="w-[300px] h-[50px] rounded-lg border-b-2w-[300px]  m-2 p-2 bg-black text-white font-bold"
                     value={password}
-                 onChange={(e) => setPassword(e.target.value)} />
+                
+                
+                onChange={(e) => setPassword(e.target.value)} />
                   <button className="w-[300px] h-[50px] rounded-lg border-b-2w-[300px]  m-2 p-2 bg-black text-white font-bold" >Login</button>
             </div>
              </form>
